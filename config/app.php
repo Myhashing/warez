@@ -160,6 +160,11 @@ return [
          * Acacha AdminLTE template provider
          */
         Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider::class,
+
+        /*
+         * Form Facade
+         */
+        'Collective\Html\HtmlServiceProvider',
     ],
 
     /*
@@ -210,6 +215,12 @@ return [
          * Acacha AdminLTE template alias
          */
         'AdminLTE' => Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::class,
+
+        /*
+         * Form Facades
+         */
+        'Form' => 'Collective\Html\FormFacade',
+        'Html' => 'Collective\Html\HtmlFacade',
 
     ],
 

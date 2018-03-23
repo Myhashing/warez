@@ -24,10 +24,13 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
     #adminlte_routes
+    Route::resource('/permission','PermissionController');
+    Route::resource('/role','RoleController');
+
 });
 
 Route::get('/test',function(){
-    Auth::loginUsingId(1);
+   // Auth::loginUsingId(1);
 
 
     return view('test');
