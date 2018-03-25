@@ -28,6 +28,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/role','RoleController');
     Route::post('/role/permission/{role}','RoleController@updatePermission')->name('role.permission');
     Route::resource('/user','UserController');
+    Route::post('/user/role/{user}','UserController@updateUserRoles')->name('user.role');
 
 });
 

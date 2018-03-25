@@ -54,5 +54,33 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
+    <hr>
+    <p></p>
+
+    <tr role="row" class="odd">
+        <td class="sorting_1">{{ $user->name }}</td>
+        <form method="post" action="/user/role/{{$user->id}}">
+            {{ csrf_field() }}
+
+            @foreach($allRoles as $role)
+
+                <td>
+                    {{$role->name}}
+                    <input type="checkbox" name="{{$role->name}}"
+                           @foreach($roles as $pe)
+                               @if($role->name == $pe->name )
+                               checked
+                                @endif
+                            @endforeach
+                    >
+                </td>
+
+            @endforeach
+            <td>
+                <button type="submit" class="btn btn-primary">save User's role</button>
+
+            </td>
+        </form>
+    </tr>
 
 @endsection
