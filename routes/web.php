@@ -26,6 +26,7 @@ Route::group(['middleware' => 'auth'], function () {
     #adminlte_routes
     Route::resource('/permission','PermissionController');
     Route::resource('/role','RoleController');
+    Route::post('/role/permission/{role}','RoleController@updatePermission')->name('role.permission');
 
 });
 

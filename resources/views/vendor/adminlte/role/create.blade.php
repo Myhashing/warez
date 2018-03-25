@@ -7,7 +7,7 @@
 
 @section('main-content')
 
-    <form method="post" action="{{route('permission.store')}}">
+    <form method="post" action="{{route('role.store')}}">
         {{ csrf_field() }}
         <div class="form-group">
             <input class="form-control" placeholder="Enter Name" type="text" name="name">

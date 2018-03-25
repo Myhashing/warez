@@ -10,6 +10,9 @@
     <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
         <div class="row">
             <div class="col-sm-6">
+                <div class="col-sm-2">
+                    <a href="/role/create">     <button type="button" class="btn btn-block btn-primary">add new role</button></a>
+                </div>
 
             </div>
             <div class="col-sm-6">
@@ -33,17 +36,35 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <!--TODO:build update form for roles-->
-                    {{ Form::open(['route'=>]) }}
+
                     @foreach($roles as $role)
                     <tr role="row" class="odd">
 
                         <td class="sorting_1">{{ $role->lable }}</td>
                             @foreach($permissions as $permission)
-
-                            <td><input type="checkbox"></td>
-
+                            <td>
+                                <input name={{$permission->name}} type="checkbox"
+                                @foreach($role->permissions->all() as $rolesPermission)
+                                    @if($rolesPermission->name == $permission->name)
+                                        checked
+                                    @endif
                                 @endforeach
+                                >
+
+                            </td>
+                                @endforeach
+                        <td>
+                            <a href="role/{{$role->id}}/edit">
+                                <button type="button" class="btn btn-block btn-primary">
+                                    Edit Role
+                                </button>
+                            </a>
+                            {{ Form::open(['route'=>['role.destroy',$role->id],'method'=>'delete', 'style'=>'display:inline']) }}
+                            <button type="submit" class="btn btn-block btn-danger">Remove role</button>
+                            {{ Form::close() }}
+
+
+                        </td>
 
                     </tr>
                     @endforeach
