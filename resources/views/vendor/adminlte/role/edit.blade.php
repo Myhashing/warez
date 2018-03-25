@@ -21,7 +21,7 @@
 
     <hr>
     <p></p>
-    
+
         <tr role="row" class="odd">
             <td class="sorting_1">{{ $role->lable }}</td>
             <form method="post" action="/role/permission/{{$role->id}}">
