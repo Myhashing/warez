@@ -24,17 +24,11 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
     #adminlte_routes
-    Route::resource('/permission','PermissionController');
-    Route::resource('/role','RoleController');
-    Route::post('/role/permission/{role}','RoleController@updatePermission')->name('role.permission');
-    Route::resource('/user','UserController');
-    Route::post('/user/role/{user}','UserController@updateUserRoles')->name('user.role');
+    Route::resource('/admin/permission','AdminPermissionController');
+    Route::resource('/admin/role', 'AdminRoleController');
+    Route::post('/admin/role/permission/{role}','AdminRoleController@updatePermission')->name('admin.role.permission');
+    Route::resource('/admin/user','AdminUserController');
+    Route::post('/admin/user/role/{user}','AdminUserController@updateUserRoles')->name('admin.user.role');
 
 });
 
-Route::get('/test',function(){
-   // Auth::loginUsingId(1);
-
-
-    return view('test');
-});

@@ -10,7 +10,7 @@
     <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
         <div class="row">
             <div class="col-sm-2">
-           <a href="/permission/create">     <button type="button" class="btn btn-block btn-primary">add new permission</button></a>
+           <a href="{{ route('permission.create') }}">     <button type="button" class="btn btn-block btn-primary">add new permission</button></a>
             </div>
 
         </div>

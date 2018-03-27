@@ -59,7 +59,7 @@
 
     <tr role="row" class="odd">
         <td class="sorting_1">{{ $user->name }}</td>
-        <form method="post" action="/user/role/{{$user->id}}">
+        <form method="post" action="{{route('admin.user.role',$user->id)}}">
             {{ csrf_field() }}
 
             @foreach($allRoles as $role)

@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="col-sm-2">
-                    <a href="/role/create">     <button type="button" class="btn btn-block btn-primary">add new role</button></a>
+                    <a href="{{ route('role.create') }}">     <button type="button" class="btn btn-block btn-primary">add new role</button></a>
                 </div>
 
             </div>

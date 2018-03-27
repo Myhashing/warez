@@ -10,7 +10,7 @@
     <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
         <div class="row">
             <div class="col-sm-2">
-           <a href="/user/create">     <button type="button" class="btn btn-block btn-primary">add new User</button></a>
+           <a href="{{ route('user.create') }}">     <button type="button" class="btn btn-block btn-primary">add new User</button></a>
             </div>
 
         </div>
@@ -48,7 +48,7 @@
 
                         <td>
                             <div class="col-sm-4">
-                           <a href="user/{{$user->id}}/edit"> <button type="button" class="btn btn-block btn-primary">Edit User</button></a>
+                           <a href="{{route('user.edit',$user->id)}}"> <button type="button" class="btn btn-block btn-primary">Edit User</button></a>
 
 
 
