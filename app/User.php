@@ -46,4 +46,23 @@ class User extends Authenticatable
         }
         return !! $role->intersect($this->roles)->count();
     }
+
+    public function hasAccess(array $permissions) : bool
+    {
+
+
+        foreach ($this->roles as $role){
+            if ($role->hasAccess($permissions)){
+                return true;
+            }
+
+            return false;
+        }
+    }
+
+    public function inRole(string $roleSlug)
+    {
+        return $this->roles()->where('lable', $roleSlug)->count() == 1;
+    }
+
 }

@@ -23,7 +23,8 @@
 						</div>
 					</div>
 					<div class="box-body">
-						{{ trans('adminlte_lang::message.logged') }}. Start creating your amazing application!
+						{{ trans('adminlte_lang::message.logged') }}. Start creating your amazing applicationaaaaa!
+						<a href="/admin/home"> admin dashboard</a>
 					</div>
 					<!-- /.box-body -->
 				</div>

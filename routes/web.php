@@ -17,18 +17,35 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'can:superAdminJob','prefix'=>'admin'], function () {
     //    Route::get('/link1', function ()    {
 //        // Uses Auth Middleware
 //    });
 
     //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
     #adminlte_routes
-    Route::resource('/admin/permission','AdminPermissionController');
-    Route::resource('/admin/role', 'AdminRoleController');
-    Route::post('/admin/role/permission/{role}','AdminRoleController@updatePermission')->name('admin.role.permission');
-    Route::resource('/admin/user','AdminUserController');
-    Route::post('/admin/user/role/{user}','AdminUserController@updateUserRoles')->name('admin.user.role');
+    Route::get('/home','HomeController@adminIndex');
+    Route::resource('/permission','AdminPermissionController');
+    Route::resource('/role', 'AdminRoleController');
+    Route::post('/role/permission/{role}','AdminRoleController@updatePermission')->name('admin.role.permission');
+    Route::resource('/user','AdminUserController');
+    Route::post('/user/role/{user}','AdminUserController@updateUserRoles')->name('admin.user.role');
 
 });
 
+
+Route::group(['middleware' => 'can:user','prefix'=>'user'], function () {
+    //    Route::get('/link1', function ()    {
+//        // Uses Auth Middleware
+//    });
+
+    //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
+    #adminlte_routes
+    Route::get('/home','HomeController@adminIndex');
+    Route::resource('/permission','AdminPermissionController');
+    Route::resource('/role', 'AdminRoleController');
+    Route::post('/role/permission/{role}','AdminRoleController@updatePermission')->name('admin.role.permission');
+    Route::resource('/user','AdminUserController');
+    Route::post('/user/role/{user}','AdminUserController@updateUserRoles')->name('admin.user.role');
+
+});

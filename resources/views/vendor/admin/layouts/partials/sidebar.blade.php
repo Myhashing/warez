@@ -37,7 +37,14 @@
             <li><a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.anotherlink') }}</span></a></li>
 
 
-
+            <li class="treeview">
+                <a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.administrator') }}</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="/admin/user"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.user') }}</span></a></li>
+                    <li><a href="/admin/permission"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.permission') }}</span></a></li>
+                    <li><a href="/admin/role"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.role') }}</span></a></li>
+                </ul>
+            </li>
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
