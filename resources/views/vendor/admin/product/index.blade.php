@@ -1,4 +1,4 @@
-@extends('adminlte::layouts.app')
+@extends('vendor.admin.layouts.app')
 
 @section('htmlheader_title')
     {{ trans('adminlte_lang::message.home') }}
@@ -9,10 +9,15 @@
 
     <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
         <div class="row">
-            <div class="col-sm-2">
-           <a href="{{ route('user.create') }}">     <button type="button" class="btn btn-block btn-primary">add new User</button></a>
-            </div>
+            <div class="col-sm-8">
+                <div class="col-sm-8">
+                    <a href="{{ route('product.create') }}">     <button type="button" class="btn btn-block btn-primary">add new product</button></a>
+                </div>
 
+            </div>
+            <div class="col-sm-6">
+
+            </div>
         </div>
         <div class="row">
             <div class="col-sm-12">
@@ -21,48 +26,49 @@
                     <tr role="row">
 
                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">
-                            Name
+                            product name
+
                         </th>
-                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">
-                            Lable
+                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">
+                            descriptions
                         </th>
-                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">
-                            Action
+                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">
+                            Status
                         </th>
+                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">
+                            actions
+                        </th>
+
 
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($users as $user)
+                    @foreach($products as $product)
                     <tr role="row" class="odd">
 
-                        <td>{{ $user->name }}</td>
-
-                        <td>
-                            @foreach($user->roles as $role)
-
-                                {{$role->name}}
-
-                            @endforeach
+                        <td class="sorting_1">
+                            {{ $product->name }}
+                        </td>
+                        <td class="sorting_1">
+                            {{ $product->description }}
+                        </td>
+                        <td class="sorting_1">
+                            {{ $product->status }}
                         </td>
 
                         <td>
-                            <div class="col-sm-4">
-                           <a href="{{route('user.edit',$user->id)}}"> <button type="button" class="btn btn-block btn-primary">Edit User</button></a>
-
-
-
-                                {{ Form::open(['route'=>['user.destroy',$user->id],'method'=>'delete', 'style'=>'display:inline']) }}
-                                <button type="submit" class="btn btn-block btn-danger">Remove User</button>
-                                {{ Form::close() }}
-
-
-                            </div>
-
+                            <a href="{{ route('product.edit',$product->id) }}">
+                                <button type="button" class="btn btn-block btn-primary">
+                                    Edit product
+                                </button>
+                            </a>
+                            {{ Form::open(['route'=>['product.destroy',$product->id],'method'=>'delete', 'style'=>'display:inline']) }}
+                            <button type="submit" class="btn btn-block btn-danger">Remove product</button>
+                            {{ Form::close() }}
                         </td>
+
                     </tr>
                     @endforeach
-
                     </tbody>
                     <tfoot>
                     <tr>
@@ -78,7 +84,9 @@
                         <th rowspan="1" colspan="1">
                             Engine version
                         </th>
-
+                        <th rowspan="1" colspan="1">
+                            CSS grade
+                        </th>
                     </tr>
                     </tfoot>
                 </table>

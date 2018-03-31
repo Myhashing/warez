@@ -1,4 +1,4 @@
-@extends('adminlte::layouts.app')
+@extends('vendor.admin.layouts.app')
 
 @section('htmlheader_title')
 	{{ trans('adminlte_lang::message.home') }}
@@ -23,7 +23,7 @@
 						</div>
 					</div>
 					<div class="box-body">
-						{{ trans('adminlte_lang::message.logged') }}. Start creating your amazing applicationaaaaa!
+						{{ trans('adminlte_lang::message.logged') }}. Start creating your amazing applicationaaa1aa!
 					</div>
 					<!-- /.box-body -->
 				</div>

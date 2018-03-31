@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['middleware' => 'can:superAdminJob','prefix'=>'admin'], function () {
+Route::group(['middleware' => 'can:superAdmin','prefix'=>'admin'], function () {
     //    Route::get('/link1', function ()    {
 //        // Uses Auth Middleware
 //    });
@@ -30,6 +30,7 @@ Route::group(['middleware' => 'can:superAdminJob','prefix'=>'admin'], function (
     Route::post('/role/permission/{role}','AdminRoleController@updatePermission')->name('admin.role.permission');
     Route::resource('/user','AdminUserController');
     Route::post('/user/role/{user}','AdminUserController@updateUserRoles')->name('admin.user.role');
+    Route::resource('/product','ProductsController');
 
 });
 
