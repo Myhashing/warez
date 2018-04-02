@@ -31,6 +31,7 @@ Route::group(['middleware' => 'can:superAdmin','prefix'=>'admin'], function () {
     Route::resource('/user','AdminUserController');
     Route::post('/user/role/{user}','AdminUserController@updateUserRoles')->name('admin.user.role');
     Route::resource('/product','ProductsController');
+    Route::resource('/plan','PlanController');
 
 });
 

@@ -36,6 +36,7 @@
             <li class="active"><a href="{{ url('admin/home') }}"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
             <li><a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.anotherlink') }}</span></a></li>
             <li><a href="{{route('product.index')}}"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.product') }}</span></a></li>
+            <li><a href="{{route('plan.index')}}"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.plan') }}</span></a></li>
 
 
             <li class="treeview">
