@@ -26,7 +26,7 @@
                             Name
                         </th>
                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">
-                            Lable
+                            label
                         </th>
                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">
                             Action
@@ -40,7 +40,7 @@
 
                         <td class="sorting_1">1</td>
                         <td>{{ $permission->name }}</td>
-                        <td>{{ $permission->lable }}</td>
+                        <td>{{ $permission->label }}</td>
                         <td>
                             <div class="col-sm-4">
                            <a href="permission/{{$permission->id}}/edit"> <button type="button" class="btn btn-block btn-primary">Edit permission</button></a>

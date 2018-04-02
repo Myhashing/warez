@@ -1,4 +1,4 @@
-@extends('adminlte::layouts.app')
+@extends('vendor.admin.layouts.app')
 
 @section('htmlheader_title')
     {{ trans('adminlte_lang::message.home') }}
@@ -29,7 +29,7 @@
                         </th>
                         @foreach($permissions as $permission)
                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">
-                            {{$permission->lable}}
+                            {{$permission->label}}
                         </th>
                         @endforeach
 
@@ -40,7 +40,7 @@
                     @foreach($roles as $role)
                     <tr role="row" class="odd">
 
-                        <td class="sorting_1">{{ $role->lable }}</td>
+                        <td class="sorting_1">{{ $role->label }}</td>
                             @foreach($permissions as $permission)
                             <td>
                                 <input name={{$permission->name}} type="checkbox"

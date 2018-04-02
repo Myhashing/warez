@@ -14,7 +14,7 @@
             <input class="form-control" value={{ $permission->name }} type="text" name="name">
         </div>
         <div class="form-group">
-            <input class="form-control" type="text" name="lable" value={{ $permission->lable }} >
+            <input class="form-control" type="text" name="label" value={{ $permission->label }} >
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

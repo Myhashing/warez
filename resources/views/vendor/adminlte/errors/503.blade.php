@@ -1,7 +1,7 @@
 @extends('adminlte::layouts.errors')
 
 @section('htmlheader_title')
-    {{ trans('adminlte_lang::message.serviceunavailable') }}
+    {{ trans('adminlte_lang::message.serviceunavailabel') }}
 @endsection
 
 @section('main-content')

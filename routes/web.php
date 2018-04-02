@@ -44,10 +44,6 @@ Route::group(['middleware' => 'can:user','prefix'=>'user'], function () {
     //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
     #adminlte_routes
     Route::get('/home','HomeController@adminIndex');
-    Route::resource('/permission','AdminPermissionController');
-    Route::resource('/role', 'AdminRoleController');
-    Route::post('/role/permission/{role}','AdminRoleController@updatePermission')->name('admin.role.permission');
-    Route::resource('/user','AdminUserController');
-    Route::post('/user/role/{user}','AdminUserController@updateUserRoles')->name('admin.user.role');
+
 
 });

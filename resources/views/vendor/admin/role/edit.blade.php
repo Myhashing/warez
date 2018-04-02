@@ -1,4 +1,4 @@
-@extends('adminlte::layouts.app')
+@extends('vendor.admin.layouts.app')
 
 @section('htmlheader_title')
     {{ trans('adminlte_lang::message.home') }}
@@ -14,7 +14,7 @@
             <input class="form-control" value={{ $role->name }} type="text" name="name">
         </div>
         <div class="form-group">
-            <input class="form-control" type="text" name="lable" value={{ $role->lable }} >
+            <input class="form-control" type="text" name="label" value={{ $role->label }} >
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
@@ -23,7 +23,7 @@
     <p></p>
 
         <tr role="row" class="odd">
-            <td class="sorting_1">{{ $role->lable }}</td>
+            <td class="sorting_1">{{ $role->label }}</td>
             <form method="post" action="{{route('admin.role.permission',$role->id)}}">
                 {{ csrf_field() }}
 

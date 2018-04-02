@@ -1,4 +1,4 @@
-@extends('adminlte::layouts.app')
+@extends('vendor.admin.layouts.app')
 
 @section('htmlheader_title')
     {{ trans('adminlte_lang::message.home') }}
@@ -19,14 +19,12 @@
                 <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
                     <thead>
                     <tr role="row">
-                        <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">
-                            No
-                        </th>
+
                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">
                             Name
                         </th>
                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">
-                            Lable
+                            label
                         </th>
                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">
                             Action
@@ -38,9 +36,8 @@
                     @foreach($permissions as $permission)
                     <tr role="row" class="odd">
 
-                        <td class="sorting_1">1</td>
                         <td>{{ $permission->name }}</td>
-                        <td>{{ $permission->lable }}</td>
+                        <td>{{ $permission->label }}</td>
                         <td>
                             <div class="col-sm-4">
                            <a href="permission/{{$permission->id}}/edit"> <button type="button" class="btn btn-block btn-primary">Edit permission</button></a>
@@ -59,23 +56,7 @@
                     @endforeach
 
                     </tbody>
-                    <tfoot>
-                    <tr>
-                        <th rowspan="1" colspan="1">
-                            Rendering engine
-                        </th>
-                        <th rowspan="1" colspan="1">
-                            Browser
-                        </th>
-                        <th rowspan="1" colspan="1">
-                            Platform(s)
-                        </th>
-                        <th rowspan="1" colspan="1">
-                            Engine version
-                        </th>
 
-                    </tr>
-                    </tfoot>
                 </table>
             </div>
         </div>

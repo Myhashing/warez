@@ -1,4 +1,4 @@
-@extends('adminlte::layouts.app')
+@extends('vendor.admin.layouts.app')
 
 @section('htmlheader_title')
     {{ trans('adminlte_lang::message.home') }}
@@ -24,7 +24,7 @@
                             Name
                         </th>
                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">
-                            Lable
+                            label
                         </th>
                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">
                             Action
